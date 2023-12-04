@@ -1,0 +1,104 @@
+Delivered-To: nicoledossantosouza@gmail.com
+Received: by 2002:a05:7108:529f:b0:35d:aadc:ab47 with SMTP id u31csp1036157gdt;
+        Sun, 3 Dec 2023 19:14:23 -0800 (PST)
+X-Received: by 2002:a05:6122:4494:b0:4ab:f448:5023 with SMTP id cz20-20020a056122449400b004abf4485023mr10242996vkb.0.1701659662902;
+        Sun, 03 Dec 2023 19:14:22 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701659662; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PA4Ydl8z2iuzCI2+/LLEn243CSgCjFiZyDO+L5F5aiRxBT1R1XPegOv+0soHuDKR/I
+         RTIJf8QrDqaSulEF5b+NVTu+0lYgm+/FcZKpiK0/aEoPSAEEQe1WGeg9Pl9M/ZTb1URI
+         ydV8wtBEoBudYgPy9kNyqUEIm/pjgETnas2+yBjOfMUdWWxrmzayPfQKhXp874Mw9gC7
+         kymVYgbPiPmc1n7XsICyfQNS4Fgy9SJI2yWqbV98YQbLjg5izWsemPyRa3AVwzlV6BPi
+         MPrmkb7X2sHiPh22b3vMiuV2+Dc9vGvCAskmTMPDddDUtQJD+MblPJMsziLZjl0BBaIN
+         aIAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=HM7g4zLpvlJcdYywKEb2sPhTJJJxBXsRNH6HPPULQts=;
+        fh=ohqYDUooa1MZnabW/KR2utVhzVFapnp3Wuxn/7dcDXE=;
+        b=HEfBAPv2oF2bhJ0hs4TpY8OMcVsDAp2w+r9VYhGLS13g/ZwDnpfxmkBEFDUOvu/vfu
+         81OpkvjJDha1fI+029dyoJVbKTUdAbK66MTiBcDTKbQ/QFAL+UwukdKhSUFxssdE458I
+         6r9/4h8a75AJOZWRK7ZyvEZdQvdxI7Bdoe5rSSgYbzV5cnqaXOWmgpjGBTHsBIRvkwG7
+         l4Y89pFLQiJYxKD5qWKqTs6XkOWQU8dxlOELFyfvGPQ3hJJgUZ9RA6Z63XzNHQ/I0cOz
+         Y/PY/tgW1aVWQZaSwnaz0sRNaZI+AOB9iuux+ygarzPsdw8qkoT3y2XQmaZ0O3565/LE
+         +f6A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="bq0H2yK/";
+       spf=pass (google.com: domain of danieljt.djt@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=danieljt.djt@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <danieljt.djt@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p15-20020ab0154f000000b007a2b420e11bsor1534019uae.2.2023.12.03.19.14.22
+        for <nicoledossantosouza@gmail.com>
+        (Google Transport Security);
+        Sun, 03 Dec 2023 19:14:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of danieljt.djt@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="bq0H2yK/";
+       spf=pass (google.com: domain of danieljt.djt@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=danieljt.djt@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1701659662; x=1702264462; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=HM7g4zLpvlJcdYywKEb2sPhTJJJxBXsRNH6HPPULQts=;
+        b=bq0H2yK/p58ey3cE0EGTTvbquxvvxMB2/C5AP0/5r4R2+WsotUuv7DGhc4tO6MAsDU
+         tI5QdFiZh3RJqA1QH66JruF1hRGD56MqLXjoGGBUTD8MBB/bid9c0/YOO6ycwUYSa9li
+         YVlRgjzAoWhqmJQvWO6EQTqA2DkRyAmRxiLd6M+/Vlx82IHn5OGBAk/Wse0qpetMxUPv
+         3XcxGoi2tryKdS8nzFDK8AHZq/Js2uOuHkOl+4UqVyaa8+BnKY2xidnY2YcWULFS5uPV
+         chEOlsFu7unBuW4FYzaE6zsu2CiXSHb+G+3GlZOKZyY7aboYEjnTdECm90t0udDMhUvs
+         0vPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701659662; x=1702264462;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=HM7g4zLpvlJcdYywKEb2sPhTJJJxBXsRNH6HPPULQts=;
+        b=s0KQgk0F622H+Yih3vC8muCgqoyDTINHw+3seqgUcUkmlXi0YRmpx74LKloSiVynDu
+         BenwgMknqb0STHlPcG4Fe8tnvyMO9bDQJfTX7wEgTqWL2d83ltt4s+zCQdOJRcPBYOTQ
+         fDfvfnmAfBDznDqGZYAK5NR6LxKEURD4Ws0zCmQfruTOZvuIczqqkM8URO50yVTkI42P
+         L6dhZQRAWFOMfIh1r7LJg3KAlTJIaQr9GM7SD1JJkVlc1e4iovOpA8Z0omUbtOataY4F
+         WoHIpTtI71kL3ZD/h+FPfeztbWiIHAwuVM/OTlYwzX2u2udCiyuf0z6rVUxqHcNJnZYW
+         MkJg==
+X-Gm-Message-State: AOJu0Yz2wohZ95kDPGdp9oVtE/c15CzAWSkPmFd/OmxzdIDVzYeIy931
+	5vX+7QosvCn0jMdALXA8BRvXy1bzSLnY785aqYFfDA+d
+X-Google-Smtp-Source: AGHT+IH4hwNhChp3pXkMN6YfT59No5D2QPz/A6BGXNNW6YSKzWynNl2r7qxnBJAJGKLNQG0y0nd42D56xJQAvKosqY4=
+X-Received: by 2002:a1f:f203:0:b0:4b2:c555:385 with SMTP id
+ q3-20020a1ff203000000b004b2c5550385mr2086802vkh.27.1701659662371; Sun, 03 Dec
+ 2023 19:14:22 -0800 (PST)
+MIME-Version: 1.0
+References: <656d40ee.650a0220.86362.ee66@mx.google.com>
+In-Reply-To: <656d40ee.650a0220.86362.ee66@mx.google.com>
+From: Daniel Jacob Tonn <danieljt.djt@gmail.com>
+Date: Mon, 4 Dec 2023 00:14:14 -0300
+Message-ID: <CAEe0FnAqMytuoy+pwRsHzqkDdHx6DG_6WytfO_sp0s2TZQ77-A@mail.gmail.com>
+Subject: 2798_877_6458_3907_2798_3652_3962_6843_6843_3962_3652_5714_3652_264_6646_81_6458_6843_6843_6041_5257_3962_445
+To: Nicole dos Santos de Souza <nicoledossantosouza@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000b44df6060ba683d5"
+
+--000000000000b44df6060ba683d5
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+81_6458_264_6843_3652_6222_7009_6458_3652_5714_3652_1655_233_3962_3652_5257=
+_2192_3652_2777_3962_6843_2192_6458_2201_3907_264_233_3652_6646_3962_6843_6=
+646_6458
+--- (7279, 3)
+
+--000000000000b44df6060ba683d5
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <span dir=3D"=
+auto">&lt;<a href=3D"mailto:ezequiel.braga.santos@gmail.com">ezequiel.braga=
+.santos@gmail.com</a>&gt;</span><br>Date: seg., 4 de dez. de 2023 =C3=A0s 0=
+0:01<br>Subject: 2798_877_6458_3907_2798_3652_3962_6843_6843_3962_3652_5714=
+_3652_264_6646_81_6458_6843_6843_6041_5257_3962_445<br>To:  &lt;<a href=3D"=
+mailto:danieljt.djt@gmail.com">danieljt.djt@gmail.com</a>&gt;<br></div><br>=
+<br>81_6458_264_6843_3652_6222_7009_6458_3652_5714_3652_1655_233_3962_3652_=
+5257_2192_3652_2777_3962_6843_2192_6458_2201_3907_264_233_3652_6646_3962_68=
+43_6646_6458 --- (7279, 3)<br>
+</div></div>
+
+--000000000000b44df6060ba683d5--

@@ -1,0 +1,101 @@
+Delivered-To: nicoledossantosouza@gmail.com
+Received: by 2002:a05:7108:529f:b0:35d:aadc:ab47 with SMTP id u31csp1021165gdt;
+        Sun, 3 Dec 2023 18:21:44 -0800 (PST)
+X-Received: by 2002:a05:6a20:a11c:b0:18b:c9cf:4521 with SMTP id q28-20020a056a20a11c00b0018bc9cf4521mr33792528pzk.2.1701656503976;
+        Sun, 03 Dec 2023 18:21:43 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701656503; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qrnEAch63s/QYlBDjpPiDxkeJkSmwKD8GbUD/Eu7Ro9yiCKX6Wf/KZtsbMXa+YPMu6
+         YHiClKhSefx/xJZKisJL7AO+QIcSqLhZJU7ScwA+u8HBOz2x9aa4z3uW5KaolaJfaurL
+         asMA8GUdySUQrFkiZwsRxT+seXFzHVCJqE87Sfyq8ld1ey/jor+QOZL3aMzDmumIVOHP
+         DFeYeNoru0GsnDhgx4Jg9T6ccdR5fM3sTWhKbCdyZCJAASWH8z2ML6m4ASGYkGzqOCsR
+         ltE74ERgOrXWeKqdWJ7WW5fd/R+KDPYp3PHhob4U/CyjitxpD5ltkn8gn9z1vVOQXZXp
+         SIHA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=GB5SteZaCDxg0/kLZJsFeifW2XLGZ/EUzt44ejNx5dY=;
+        fh=ohqYDUooa1MZnabW/KR2utVhzVFapnp3Wuxn/7dcDXE=;
+        b=TxfJ6AslSj189ohFAmJ0p4DqxSXiwe4ZYgOKCpzz5PcSbKvd0Wiq07WjXWGnPwx6OQ
+         hBujXM2MCcPaphwkEcfWa52UCoNDdSb7z+/E4kabXx/tbVbvW92mw5N4OpBJc6lT18Ug
+         ABe7ICr1+3XSB5GMsP7Qg0hEVcnhDk8NYakuFv079k/t2rerC3D90NGn6YvWrTj7SLjR
+         2tNPjDLxjyxR5IR3h9nq4iaC+ZVWfD8nsijEAVxz8QQpEhY30C+0UQF70aZr+pFEfQ85
+         sx3WORSmMHWI4rElshx8pCU6p3fcqWdJVuEpMbLclpNTSRrLhncMzm3tbkFXE3PYUFUy
+         ybvg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=atY8g4rQ;
+       spf=pass (google.com: domain of wendellshadow13@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=wendellshadow13@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <wendellshadow13@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id jw8-20020a170903278800b001cc3b988fdfsor1878524plb.0.2023.12.03.18.21.43
+        for <nicoledossantosouza@gmail.com>
+        (Google Transport Security);
+        Sun, 03 Dec 2023 18:21:43 -0800 (PST)
+Received-SPF: pass (google.com: domain of wendellshadow13@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=atY8g4rQ;
+       spf=pass (google.com: domain of wendellshadow13@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=wendellshadow13@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1701656503; x=1702261303; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=GB5SteZaCDxg0/kLZJsFeifW2XLGZ/EUzt44ejNx5dY=;
+        b=atY8g4rQenNjByMa1ZwMoGpnvZIHuO6pL7jZxfqqBwCEIrInfyhYNgG0B6/1MMDZLf
+         9E+4Gg7WDEUKuwNZeBdIK02QtRqtlTx8eH86l+A+mBdM/HMDLuNQkg9ql59LYVssSg9n
+         wx2XLhaxp4r9kFRpIuJcn5EmU0OlDLy+rzNvewGTiPPiP1/3gTNbDg239CRe+P6WCVVI
+         BPWX+oTs4YuehgFesdRgsooW9Z2z6jIyrhFYJXy+9/owc0rPpJ0A3/x5QV20C5vz9+t6
+         vUpVNSa90RmJ/tC1uZIOwoNImdj7GPnA0Iu5ZVovXViyImDnUgi/tyZArpwmobeY7rQd
+         gHPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701656503; x=1702261303;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=GB5SteZaCDxg0/kLZJsFeifW2XLGZ/EUzt44ejNx5dY=;
+        b=Y6lAuMAZ3FwfAORJ4Qaq32YujQZ2rvjW+ckNtPfgn7TLO4TdWSplVdb0bl/E8kfeQm
+         +a8kYdc8Lyf60U8YaJRaNCmTEgiRB/R9SuHhXyc2305LtkdzxRdgZpGFduwPfJj4Nijt
+         3q0wHKnPshXHAFPueAy+gfzUlQ3zEId3dQBG2xNwam4msEelmsGMCzvMA47V11F7cRRH
+         vPd2SJiHwtcam2AN+NrxJBURkTHEtcc5h6vEOFmiYpZARbvSx/QvvkEdCjnzAjpitPeo
+         ACLO3bVFRIVdsWMGtH+vsDf7SUqWDyLq4LC7IYpdQZ2jeyz9Nr0/oujenOTg0bf+5hwT
+         uAvQ==
+X-Gm-Message-State: AOJu0YxgQJGLYTU4eIEzPYy5feEkzwZrY8WS6zmioa+ttf0NZa/QnhNT
+	H4AB+KTTcLFvEJMgdB9g3L/9J2WVmQaG5VNejCkVr/yu4RY=
+X-Google-Smtp-Source: AGHT+IGJosjKWiWfiss1iiJ3x+hqqG9zBnEuZdhu9+Uy8fUkPJXE/ZLhevWnW/eI4PFzwlIrwMHEAVpficLLB0W07WE=
+X-Received: by 2002:a17:90a:c8b:b0:286:6cc1:2caf with SMTP id
+ v11-20020a17090a0c8b00b002866cc12cafmr957659pja.57.1701656503238; Sun, 03 Dec
+ 2023 18:21:43 -0800 (PST)
+MIME-Version: 1.0
+References: <656d3553.170a0220.6fa0f.44e2@mx.google.com>
+In-Reply-To: <656d3553.170a0220.6fa0f.44e2@mx.google.com>
+From: Wendell Oliveira <wendellshadow13@gmail.com>
+Date: Sun, 3 Dec 2023 23:21:21 -0300
+Message-ID: <CANf+BNUFYCsa6bMNZ2Ck5Ceu--RnQeLgKT=W3o06TYwZ-BJVeA@mail.gmail.com>
+Subject: 100_117_118_105_100_111_32_118_99_32_100_101_115_99_111_98_114_105_114
+To: Nicole dos Santos de Souza <nicoledossantosouza@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000067c476060ba5c723"
+
+--00000000000067c476060ba5c723
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+97_108_103_101_98_114_97_32_233_32_109_117_105_116_111_32_108_101_103_97_10=
+8
+--- (779, 361)
+
+--00000000000067c476060ba5c723
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <span dir=3D"=
+auto">&lt;<a href=3D"mailto:ezequiel.braga.santos@gmail.com">ezequiel.braga=
+.santos@gmail.com</a>&gt;</span><br>Date: dom., 3 de dez. de 2023 =C3=A0s 2=
+3:11<br>Subject: 100_117_118_105_100_111_32_118_99_32_100_101_115_99_111_98=
+_114_105_114<br>To:  &lt;<a href=3D"mailto:wendellshadow13@gmail.com">wende=
+llshadow13@gmail.com</a>&gt;<br></div><br><br>97_108_103_101_98_114_97_32_2=
+33_32_109_117_105_116_111_32_108_101_103_97_108 --- (779, 361)<br>
+</div></div>
+
+--00000000000067c476060ba5c723--

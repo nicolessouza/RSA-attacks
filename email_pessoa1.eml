@@ -1,0 +1,85 @@
+Delivered-To: nicoledossantosouza@gmail.com
+Received: by 2002:a05:7108:529f:b0:35d:aadc:ab47 with SMTP id u31csp1031066gdt;
+        Sun, 3 Dec 2023 18:59:01 -0800 (PST)
+X-Received: by 2002:a05:6808:1825:b0:3b8:b622:9815 with SMTP id bh37-20020a056808182500b003b8b6229815mr4281200oib.5.1701658741415;
+        Sun, 03 Dec 2023 18:59:01 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701658741; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KSMrNv8PmDhUYrL0+OozULZKsqnn/3f8btBZXKGCTRzJp05vII1rGyz1K1Ug8BnlL/
+         SkHfdUQigRAWSQff2mGp9DIBXfSyXJ5TDLQk1w0PczAEb6Nx/+gP9Cb94lB29+g2yJC7
+         baJzCAx8NGGESWR0m3F4bn3jIM/7AJsoVc5weIfS5W01FmhBaGPgT/WbKZj9aYwAj/UK
+         6qeTNmRTZwkCU9+FHMW3Z5iqIyc+xN+LsSBEoJssLwId/5r4kNfzWmDkKsRKWRcak7Fj
+         PPuWUzSFwSnaiUtCOm686lghef7ix+BB6DsiqfEV9DduURnkRwYfkwL7kQnVDAp9+u2W
+         kcNA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:subject:to:from:date
+         :message-id:dkim-signature;
+        bh=5f0GAEwSzzeFTxXCfmq/JW6CMnjCk4sSyRug5jydJYs=;
+        fh=J0myzx7mJpV7GhdjT/bqdPUNkgwfn/+Xv/yIxvM5J3w=;
+        b=WoDI3co29UhXxP074c+ef8ecbs5Z5gKWe/s+AYnIeEnYUXucMWMCSWRsxZhh0oqbE1
+         fuHfnE713/M+ct0FfIuys0gH3fl++wB7/582hIoPxh+3Meq74uOmxIx3LqbFRwOyLDiy
+         MVisf+bKFdDCIAKxzZbsc+n0Iut6sUrAqL69YOoPdAITKmqJUQHq7SMx3df55UrJumkg
+         OMj1K0BNRHEHK1vMMfAV68oItHONk2vrbQvLPMi0/5E/tHQEQIuXtWJetKMOhF/R4DbA
+         U2f37sN0a5NH8aC1ZfkTIpqGzuXCKcos6XkwBbvzNlAUDYwlq1POXqzRlC6cVe4RvPTw
+         Qaaw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=QP9d0Q6L;
+       spf=pass (google.com: domain of ezequiel.braga.santos@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=ezequiel.braga.santos@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <ezequiel.braga.santos@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id c2-20020aca1c02000000b003b834b6d56dsor3899220oic.14.2023.12.03.18.59.01
+        for <nicoledossantosouza@gmail.com>
+        (Google Transport Security);
+        Sun, 03 Dec 2023 18:59:01 -0800 (PST)
+Received-SPF: pass (google.com: domain of ezequiel.braga.santos@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=QP9d0Q6L;
+       spf=pass (google.com: domain of ezequiel.braga.santos@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=ezequiel.braga.santos@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1701658740; x=1702263540; dara=google.com;
+        h=mime-version:content-transfer-encoding:subject:to:from:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=5f0GAEwSzzeFTxXCfmq/JW6CMnjCk4sSyRug5jydJYs=;
+        b=QP9d0Q6Ll6Dm41ji9wCwwmbei+5ARAlYD9HnpYa0i9dfeHEKzj5vsHEinISZFgs0KM
+         v3fEN145VWaYWsibzGH/g53SyZ16TsuojdNXDIZ1szkdrgeRoyX3aCb3zcklbI25278/
+         7eujowKeR+t2hthqR9aMCZSzt2W/73edD97gJq968IdnJqVqmTk4KQYQj/OHWayyft4j
+         qaL5w2rehVSqPf0Kb5uWPtzfMkWvXWLOYhNLhHfZ9biWCqjuFf7BfpLq8KP7L2rarL1d
+         X4Lzy27Y/BAKyzQ5JKvmzHVS2g2qLjaRrgwQh00E39qmWQAxfY8cm/LdAEKuVlDTiwVx
+         WSfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701658740; x=1702263540;
+        h=mime-version:content-transfer-encoding:subject:to:from:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=5f0GAEwSzzeFTxXCfmq/JW6CMnjCk4sSyRug5jydJYs=;
+        b=gMtfcygbKX0sa0OLvv+N5cqcggFH7zu5aC/j6tUitX3Ph8vtMPi+u865BtV7zwabwM
+         RZinpubUnAJiJEOazB/e/C9OHCo740NV2bjuFWtdtmCep+sQJ4lzBX7vPQL6xVZnCFLm
+         UuddNX9gmOXahNH1rkALCsZg1sk1pLT4EM/MY42gTjgvnBDLAtWBWbf0suFb4/bvPqT0
+         NLHLykZdg9X2P0Bsb8izRN9YXLqfElcSx3MIbwCwRESzM959cAf8wFkEd2ggx1KYQ3z3
+         20FafAL8mZwlgSI5HCx9oALcJwTuxzCR8x17rkHW5TDAAs9ElVHO34sjYUbU+cnvwZz6
+         5Lsw==
+X-Gm-Message-State: AOJu0Yy8wPcE0APZx5eKG2zvFBlZF/v3oKkCmJfpxL90vilPtQ4bpp+n
+	FOrZM6ywAyPEgufD9vfPZ0P+ucPxa/V45Q==
+X-Google-Smtp-Source: AGHT+IEcPnM8p1cwQKfPy+bLAzCUmmE2vUoe8jeGvq3p6+IyB4GyKKT8QbLseUa28YnpCR9Lels11A==
+X-Received: by 2002:a05:6808:210a:b0:3b6:dd3c:5f78 with SMTP id r10-20020a056808210a00b003b6dd3c5f78mr5231210oiw.44.1701658740549;
+        Sun, 03 Dec 2023 18:59:00 -0800 (PST)
+Return-Path: <ezequiel.braga.santos@gmail.com>
+Received: from [10.125.130.190] ([189.122.192.147])
+        by smtp.gmail.com with ESMTPSA id y3-20020a656c03000000b005c21943d571sm5763334pgu.55.2023.12.03.18.58.59
+        for <nicoledossantosouza@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 03 Dec 2023 18:59:00 -0800 (PST)
+Message-ID: <656d4074.650a0220.5b294.efe0@mx.google.com>
+Date: Sun, 03 Dec 2023 18:59:00 -0800 (PST)
+From: ezequiel.braga.santos@gmail.com
+To: nicoledossantosouza@gmail.com
+subject: =?utf-8?b?MTMzXzQwM18xODNfMzY5XzEzM184MF82MjlfMjAyXzIwMl82MjlfODBf?=
+ =?utf-8?b?NDQzXzgwXzYwNl80NDhfMjVfMTgzXzIwMl8yMDJfNTQ2XzQ2MF82MjlfNTQz?=
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+25_183_606_202_80_326_227_183_80_443_80_539_582_629_80_460_555_80_292_629_202=
+_555_183_50_369_606_582_80_448_629_202_448_183 --- (681, 3)
