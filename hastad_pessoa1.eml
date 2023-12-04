@@ -1,0 +1,103 @@
+Delivered-To: nicoledossantosouza@gmail.com
+Received: by 2002:a05:7108:529f:b0:35d:aadc:ab47 with SMTP id u31csp1410980gdt;
+        Mon, 4 Dec 2023 08:41:24 -0800 (PST)
+X-Received: by 2002:a05:6a21:195:b0:18b:feaf:36ce with SMTP id le21-20020a056a21019500b0018bfeaf36cemr40718523pzb.1.1701708083771;
+        Mon, 04 Dec 2023 08:41:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701708083; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ks807IqnGDpHKlMWFiivFYdy9K4m08mDF0SCSfanPOmBvviliwPAxiBYLq161aQoqU
+         6z/V/iyRAiI3XsrY1jc37jg0bvqsFXjNU4QyBUm0mLg7tEWJtA9YYMf9jfo6O8Tn6Tmu
+         /WW5ZCDAwQIB3AWDKS22x4JAd/IwEzzZkB9FQxro39a5Kk2xB53L+flZVjpYgU7tzTzO
+         TH2nO2apRTYNwN8O88pEA4w6l/92Iv/xszcJUpx1SG/+uWNKky4AJ04xeGXcaSqtdxlu
+         0q4IpnOSgD/E2PKG3XSnSsV9fmceA3VOc2a9Q49YG0UUGhSc1XDD0rQMC9HcusBm5WLh
+         yelw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:subject:to:from:date
+         :message-id:dkim-signature;
+        bh=HXSqJX+8P1RdMScharyMd5Hni+7nglA9DCpNbPFTiVo=;
+        fh=J0myzx7mJpV7GhdjT/bqdPUNkgwfn/+Xv/yIxvM5J3w=;
+        b=PTVQVUd1AeEB9I7aHOtaBuwyZHwsWJX59kRyKvbsjo2h5S91owZ5xNArcvUSdRUon0
+         7B2CIiA6m/iu/Uts37I1OJtoe0RYXQVgXexdq12tAOfHEkpbZm97z5DmRkuI7BHYPbI9
+         B4VppncdCXcIHxVDMXzxQOAWp3B3inJG5UOHgOS3l6C48rmEpBqPDKTqGFP8++BU8CFY
+         FDsnIlISd9IzSCjnJIWukxrlvjCL+JiL2u6HwxhT/zuIQYzdq2xpxj5mAUTm1vV3KL4Q
+         NWYZJRl1sVnfIUB1n92Clwn+g2jeAfL5UXUwiDDvylWsLRGPEJBtsWjDx+gF0KP3mqps
+         uXHA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=iM4HgLxd;
+       spf=pass (google.com: domain of ezequiel.braga.santos@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=ezequiel.braga.santos@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <ezequiel.braga.santos@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id b126-20020a62cf84000000b006cdce0bb003sor1021643pfg.12.2023.12.04.08.41.23
+        for <nicoledossantosouza@gmail.com>
+        (Google Transport Security);
+        Mon, 04 Dec 2023 08:41:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of ezequiel.braga.santos@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=iM4HgLxd;
+       spf=pass (google.com: domain of ezequiel.braga.santos@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=ezequiel.braga.santos@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1701708083; x=1702312883; dara=google.com;
+        h=mime-version:content-transfer-encoding:subject:to:from:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=HXSqJX+8P1RdMScharyMd5Hni+7nglA9DCpNbPFTiVo=;
+        b=iM4HgLxddUqoiW6tv33L76deTCGscbtw/mmxVsXcpHb8izWXUcc6p5qijI74qGqYYW
+         8bj4lE9vykYgW9AcpP/0M5LhTceZPiQbFnKcaCXK35oCXGR6x9D2oiFgZYz3ApibDO/j
+         J55LohjkERj2g6/tfHNg0rDGcztB27lmcho7h3J+F50SKTC+6+osltu8gRwpGXVVdPvb
+         CKKJCbzJ+SAEAi2xFfky9DocdkKPF3Ge4aqlt1J4k5qzUY7W71ULLgquRlxjN0NbGNIt
+         yYBJsdoO1TfxwYlNdqFO459SA67SKBjGMhrcpAjBn1Lm0iPwhAmhR5oaioxqs4b51hcS
+         8zMQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701708083; x=1702312883;
+        h=mime-version:content-transfer-encoding:subject:to:from:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=HXSqJX+8P1RdMScharyMd5Hni+7nglA9DCpNbPFTiVo=;
+        b=LWlJk0/WFAPfQz4/1VAhim2E8nePDTN8Mq4FtKkBgmxZbd5rPi59haxM010STEcW+8
+         DW6ChRNhPTaI4F+pRa1DgpeqwwipiLro93tTKSDhf1Ljo86p1Dl1+BtrR2L1Ga0oiOzW
+         0lknxjMH1/cXo4f1tsVk4NZEj0vxn/OPA5bhkrpLWtM8l9tXZi9gRWam/ffTY+KaJj3T
+         5C7TIOQDGnt1qnCO8nAJqrm9Ude/f81CoL244fC6qDDQEY94sEIcz+3bzCwezitOMqRV
+         4XN6nUptvs8ahwutKalOBxl1rpy+JwgeZqNnEHXlAMFDeePHWzH+hrr+P0n47rQU/wul
+         4bow==
+X-Gm-Message-State: AOJu0YzCNiaGxIkaurJfE9Jfp+27wSb5b9vtQWWzVSTVnLmFdpFLhbw2
+	MbiVZOF+oKGJ7Xodui2aDfHIb2hjDV8iOA==
+X-Google-Smtp-Source: AGHT+IGRsPBxWTAEPv0FbR4mB8y0sW2fV6ZiRwUZhgrW0U3h0tQ/ctVfJ5dmg/uRKyof4wqz9P2O4w==
+X-Received: by 2002:a05:6a00:1ac9:b0:6ce:601e:d0e5 with SMTP id f9-20020a056a001ac900b006ce601ed0e5mr803829pfv.46.1701708082942;
+        Mon, 04 Dec 2023 08:41:22 -0800 (PST)
+Return-Path: <ezequiel.braga.santos@gmail.com>
+Received: from Ezequiel-PC.fgv.br ([201.39.147.24])
+        by smtp.gmail.com with ESMTPSA id a2-20020aa78642000000b006ce53467669sm1789697pfo.133.2023.12.04.08.41.22
+        for <nicoledossantosouza@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 04 Dec 2023 08:41:22 -0800 (PST)
+Message-ID: <656e0132.a70a0220.6cbd7.4e44@mx.google.com>
+Date: Mon, 04 Dec 2023 08:41:22 -0800 (PST)
+From: ezequiel.braga.santos@gmail.com
+To: nicoledossantosouza@gmail.com
+subject: Mesmo e, n diferentes
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+912673_1092727_1367631_1481544_912673_32768_1030301_1520875_1520875_1030301_3=
+2768_12649337_32768_1157625_1295029_1404928_1367631_1520875_1520875_13312053_=
+1643032_1030301_1259712
+
+---
+(7040961268861043878115744931961604431898333306866663273568604114544294092320=
+41899711743292888918664252580672810853489177837108027596429056507888229022518=
+48544339954642001894964559306649202277013029204994341234754860020132623650614=
+19927308127993478285201614638540752858265983400917132676288584402383649057623=
+82341611882015374874082464985284757837200856996310548717287489471242080689649=
+82464711145731787502179891934122432935373781047325206944152921291173874626958=
+16324061128699098629856859316681118896102009042169196108829071774434372356894=
+07709957282751934414276649157064575607022068392445699219730495779118879179370=
+68486368791285566807329534291455289475278482936699131158051770876801834506771=
+28993259733993060454956341952722811251758777185636545105744167047940216347411=
+45406446451339151039833444512476668089236897510642193565662492941551759133058=
+60179656239994503277711231238509288936907676485122007334705488731386374564429=
+66210199614603671146941740886794019262193211482029830147836076099901909472374=
+53611399395653101089419670311864936217754613521959055453427292735545471104415=
+33573086904968942049950924722980731381672712887717697188809510017581073959435=
+13833352566884766256864007028467643994015487708437, 3)

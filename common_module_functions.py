@@ -59,6 +59,6 @@ def attack(c1, c2, e1, e2, N):
     return (m1 * m2) % N
 
 def generate_keys(size):
-    # Gera as chaves n, e1, e2
+    # Gera as chaves n, e1, e2 para teste
     pub, priv = rsa.newkeys(size)
     return pub.n, pub.e

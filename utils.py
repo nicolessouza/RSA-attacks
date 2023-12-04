@@ -16,7 +16,7 @@ def modinv(a, m):
     else:
         return x % m
 
-def ler_arquivo_eml_e_converter_para_lista(nome_arquivo):
+def ler_arquivo_eml_e_converter_para_lista(nome_arquivo, assunto_criptografado=True):
     """
     Lê um arquivo .eml e converte o corpo e assunto para uma lista de inteiros
     """
@@ -24,7 +24,6 @@ def ler_arquivo_eml_e_converter_para_lista(nome_arquivo):
     email = ler_arquivo_eml(nome_arquivo)
 
     corpo = email["corpo"]
-    assunto = email["assunto"]
 
     # Tirando espaços, quebras de linhas e '=' do corpo do e-mail
     corpo = corpo.replace(' ', '')
@@ -37,9 +36,23 @@ def ler_arquivo_eml_e_converter_para_lista(nome_arquivo):
     e = int(chave.split(',')[1][:-1])
 
     blocos_corpo = [int(numero) for numero in corpo.split('_')]
-    blocos_assunto = [int(numero) for numero in assunto.split('_')]
 
-    return {"N": N, "e": e, "corpo": blocos_corpo, "assunto": blocos_assunto}
+    if assunto_criptografado:
+        assunto = email["assunto"]
+        blocos_assunto = [int(numero) for numero in assunto.split('_')]
+        return {"N": N, "e": e, "corpo": blocos_corpo, "assunto": blocos_assunto}
+    else:
+        return {"N": N, "e": e, "corpo": blocos_corpo}
+
+# Função que lê um arquivo .txt e retorna uma lista de inteiros separados por "_"
+def ler_arquivo_txt_e_converter_para_lista(nome_arquivo):
+    with open(nome_arquivo, 'r') as arquivo:
+        texto = arquivo.read()
+        texto = texto.replace(' ', '')
+        texto = texto.replace('\n', '')
+        texto = texto.replace('=', '')
+        return [int(numero) for numero in texto.split('_')]
+        
 
 import email
 from email import policy
